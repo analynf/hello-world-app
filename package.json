@@ -12,6 +12,13 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "npm run cleanup && gh-pages -d build",
+    "cleanup": "rimraf node_modules/gh-pages/.cache"
+  },
+  "devDependencies": {
+    "gh-pages": "^1.1.0",
+    "rimraf": "^2.6.2"
   }
 }
